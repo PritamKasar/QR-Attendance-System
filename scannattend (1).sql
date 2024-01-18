@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 18, 2024 at 10:09 AM
+-- Generation Time: Jan 18, 2024 at 02:34 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,6 +20,32 @@ SET time_zone = "+00:00";
 --
 -- Database: `scannattend`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `attendance`
+--
+
+CREATE TABLE `attendance` (
+  `sr_no` int(255) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `prn` bigint(20) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `mo_no` int(10) NOT NULL,
+  `time` datetime NOT NULL DEFAULT current_timestamp(),
+  `faculty_id` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `attendance`
+--
+
+INSERT INTO `attendance` (`sr_no`, `name`, `prn`, `email`, `mo_no`, `time`, `faculty_id`) VALUES
+(1, 'Bhushan Nandwalkar', 214, 'bn12@outlook.com', 2147483647, '2023-11-29 14:53:42', 0),
+(2, 'Harshal Aambadas Mhaske', 2152006001256, 'harshal123@gmail.com', 2147483647, '2023-11-29 14:54:08', 0),
+(3, 'Malti Suresh Bhokare', 2154491245012, 'maltibhokare2003@gmail.com', 2147483647, '2023-11-29 14:54:55', 0),
+(4, 'Makarand Shahade', 215, 'mrs12@outlook.com', 2147483647, '2023-11-29 14:57:18', 0);
 
 -- --------------------------------------------------------
 
@@ -50,6 +76,12 @@ INSERT INTO `users` (`sr_no`, `username`, `password`, `time`, `faculty_id`) VALU
 --
 
 --
+-- Indexes for table `attendance`
+--
+ALTER TABLE `attendance`
+  ADD PRIMARY KEY (`sr_no`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -58,6 +90,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `attendance`
+--
+ALTER TABLE `attendance`
+  MODIFY `sr_no` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
